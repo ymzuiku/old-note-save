@@ -1,0 +1,2 @@
+# self-life
+only trivial
