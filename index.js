@@ -133,7 +133,7 @@ if (str[2] === 'k' && !str[3]) {
 
 
 if(str[2] === 'git') {
-	if(str[3] === 'push') {
+	if(str[3] === 'p') {
 		cd(__dirname)
 		exec('git add .')
 		exec('git cmm')
