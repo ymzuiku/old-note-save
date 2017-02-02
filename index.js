@@ -133,6 +133,7 @@ if (str[2] === 'k' && !str[3]) {
 
 
 if(str[2] === 'self' && str[3] === 'push') {
+	console.log('正在push <self-life> 到github')
 	if(!str[4]) {
 		cd(__dirname)
 		exec('git add .')
