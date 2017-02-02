@@ -29,11 +29,13 @@ if (str[2] ==='v'  && !str[3]) {
 	d : 从design中删除一个文件
 	dc : 从codes中删除一个文件
 	code : 使用code打开self-life项目
+	cd : 显示self-life的路径
 	ls : 显示design中的文件
 	lsc : 显示codes中的文件
 	doc : 使用code打开doc目录
 	design : 使用finder打开doc目录
 	codes : 使用finder打开codes目录
+	self push : 把self-life项目push到github
 	`)
 }
 
@@ -72,7 +74,6 @@ if (str[2] === 'k' && !str[3]) {
 			console.log('add codes...')
 			cp('-r', str[3], `${__dirname}/codes`)
 			cd(`${__dirname}/codes/${_str}`)
-			exec('npm unlink')
 			rm('-r', `node_modules`)
 		}, function(unhave){
 			cp('-r', str[3], `${__dirname}/design`)
@@ -88,7 +89,6 @@ if (str[2] === 'k' && !str[3]) {
 			console.log('add codes...')
 			cp('-r', str[3], `${__dirname}/codes`)
 			cd(`${__dirname}/codes/${_str}`)
-			exec('npm unlink')
 			rm('-r', `node_modules`)
 		}, function(unhave){
 			cp('-r', str[3], `${__dirname}/design`)
@@ -100,7 +100,6 @@ if (str[2] === 'k' && !str[3]) {
 			console.log('add codes...')
 			cp('-r', str[3], `${__dirname}/codes`)
 			cd(`${__dirname}/codes/${_str}`)
-			exec('npm unlink')
 			rm('-r', `node_modules`)
 		}, function(unhave){
 			cp('-r', str[3], `${__dirname}/design`)
