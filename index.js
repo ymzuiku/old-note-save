@@ -132,11 +132,16 @@ if (str[2] === 'k' && !str[3]) {
 }
 
 
-if(str[2] === 'git') {
-	if(str[3] === 'p') {
+if(str[2] === 'gitpush') {
+	if(!str[3]) {
 		cd(__dirname)
 		exec('git add .')
 		exec('git cmm')
+		exec('git pusha')
+	} else {
+		cd(__dirname)
+		exec('git add .')
+		exec(`git cm ${str[3]}`)
 		exec('git pusha')
 	}
 }
