@@ -15,7 +15,6 @@ npm i --save react react-dom react-router @types/react @types/react-dom @types/r
 npm i --save-dev typescript awesome-typescript-loader source-map-loader
 npm i --save-dev webpack
 npm i --save-dev webpack-dev-server
-npm link --save webpack webpack-dev-server
 ```
 
 # 创建tsconfig.json
