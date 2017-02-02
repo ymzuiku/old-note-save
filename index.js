@@ -18,6 +18,13 @@ const haveFile = (path,have, unhave)=>{
 	})
 }
 
+if(str[2] === 'init' && !str[3]) {
+	cd(__dirname)
+	mkdir(`design`)
+	mkdir(`codes`)
+	mkdir(`doc`)
+}
+
 
 if (str[2] === 'k' && !str[3]) {
 	exec('pkill node')
@@ -37,17 +44,35 @@ if (str[2] === 'k' && !str[3]) {
 		console.log('库中已有该文件')
 		console.log('可使用用ar命令覆盖库中的文件')
 	}, function(unhave){
-		cp('-r', str[3], `${__dirname}/design`)
+		haveFile(`${pwd}/${str[3]}/package.json`, function(have){
+			console.log('is codes')
+			cp('-r', str[3], `${__dirname}/codes`)
+			rm('-r', `${__dirname}/code/${str[3]}/node_modules`)
+		}, function(unhave){
+			cp('-r', str[3], `${__dirname}/design`)
+		})
 		console.log("成功添加${str[3]}到库中")
 	})
 } else if (str[2] === 'ar') {
 	let file = `${__dirname}/design/${str[3]}`
 	haveFile(file, function(have){
 		console.log('库中已有该文件')
-		cp('-r', str[3], `${__dirname}/design`)
+		haveFile(`${pwd}/${str[3]}/package.json`, function(have){
+			console.log('is codes')
+			cp('-r', str[3], `${__dirname}/codes`)
+			rm('-r', `${__dirname}/code/${str[3]}/node_modules`)
+		}, function(unhave){
+			cp('-r', str[3], `${__dirname}/design`)
+		})
 		console.log("成功添加${str[3]}到库中, 已覆盖")
 	}, function(unhave){
-		cp('-r', str[3], `${__dirname}/design`)
+		haveFile(`${pwd}/${str[3]}/package.json`, function(have){
+			console.log('is codes')
+			cp('-r', str[3], `${__dirname}/codes`)
+			rm('-r', `${__dirname}/code/${str[3]}/node_modules`)
+		}, function(unhave){
+			cp('-r', str[3], `${__dirname}/design`)
+		})
 		console.log("成功添加${str[3]}到库中")
 	})
 } else if (str[2] === 'm') {
