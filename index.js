@@ -35,7 +35,6 @@ if (str[2] ==='v'  && !str[3]) {
 	doc : 使用code打开doc目录
 	design : 使用finder打开doc目录
 	codes : 使用finder打开codes目录
-	self push : 把self-life项目push到github
 	`)
 }
 
@@ -190,21 +189,5 @@ if (str[2] === 'k' && !str[3]) {
 	}, function(unhave){
 		console.log('库中没有该文件')
 	})
-}
-
-
-if(str[2] === 'self' && str[3] === 'push') {
-	console.log('正在push <self-life> 到github')
-	if(!str[4]) {
-		cd(__dirname)
-		exec('git add .')
-		exec('git cmm')
-		exec('git pusha')
-	} else {
-		cd(__dirname)
-		exec('git add .')
-		exec(`git cm ${str[4]}`)
-		exec('git pusha')
-	}
 }
 
