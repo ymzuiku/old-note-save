@@ -36,8 +36,10 @@ npm adduser (添加账号)
 npm whoaml (查看当前账号)
 npm version patch (把版本从1.0.0升级到1.0.1)
 sudo npm publish (发布到npmjs.org)
-[发布过程可能遇到的问题](https://segmentfault.com/a/1190000006250554)
 ```
+
+[发布过程可能遇到的问题](https://segmentfault.com/a/1190000006250554)
+
 # npm link
 npm link 同步开发npm包的必要功能,
 首先在当前包中使用npm link,把包链接到全局中,

@@ -49,7 +49,7 @@ if(str[2] === 'init' && !str[3]) {
 if (str[2] === 'k' && !str[3]) {
 	exec('pkill node')
 } else if (str[2] === 'code' && !str[3]) {
-	exec(`code ${__dirname}/..`)
+	exec(`code ${__dirname}`)
 } else if (str[2] === 'cd' && !str[3]) {
 	console.log(__dirname)
 } else if (str[2] === 'ls' && !str[3]) {
@@ -113,6 +113,20 @@ if (str[2] === 'k' && !str[3]) {
 			console.log(`可以使用gr,或者gor命令,覆盖${pwd}/${str[3]}文件`)
 		}, function(unhave){
 			cd(`${__dirname}/design`)
+			cp('-r', str[3], pwd)
+			console.log(`成功从库中提取文件${file}到${pwd}/${str[3]}`)
+		})
+	}, function(unhave){
+		console.log('库中没有该文件')
+	})
+} else if (str[2] === 'gc') {
+	let file = `${__dirname}/codes/${str[3]}`
+	haveFile(file, function(have){
+		haveFile(`${pwd}/${str[3]}`, function(have){
+			console.log(`无法复制出文件, 因为${pwd}已有同名文件${str[3]}`)
+			console.log(`可以使用gr,或者gor命令,覆盖${pwd}/${str[3]}文件`)
+		}, function(unhave){
+			cd(`${__dirname}/codes`)
 			cp('-r', str[3], pwd)
 			console.log(`成功从库中提取文件${file}到${pwd}/${str[3]}`)
 		})
