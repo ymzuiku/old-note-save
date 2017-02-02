@@ -50,6 +50,18 @@ npm link <包名> (把全局项目链接到当前目录中)
 npm unlink (关闭link)
 ```
 
+# nodejs检测文件是否存在
+```
+fs.exists("../7",function(exists){
+  if(exists){
+     console.log("文件存在")
+  }
+     if(!exists){
+        console.log("文件不存在")
+     }
+  })
+```
+
 # 开发node命令行,配合npm
 安装shelljs和yargs
 
