@@ -14,7 +14,7 @@ $ `npm init`
 npm i --save react react-dom react-router @types/react @types/react-dom @types/react-router
 npm i --save underscore @types/underscore
 npm i --save-dev typescript awesome-typescript-loader source-map-loader
-npm i -g webpack@1.14 webpack-dev-server@1.16.2
+npm i -g webpack@1.14 webpack-dev-server@1.16.2 supervisor
 ```
 
 # 创建tsconfig.json

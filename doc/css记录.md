@@ -1,5 +1,13 @@
 # css记录
 
+## 居中
+```
+//垂直居中
+align-items: center;
+//水平居中
+justify-content: center;
+```
+
 ## 鼠标移动上去的样式:
 cursor: pointer;
 
